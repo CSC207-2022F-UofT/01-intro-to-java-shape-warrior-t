@@ -32,6 +32,7 @@ public class Basics {
      *    (Relevant reading: 1.1.2. Defining methods)
      */
     public static void main(final String[] args) {
+
         /* 3. In Python, we could print out code using the print() function.
          *    In Java, we do the same thing by using System.out.println();
          *    In the line below, we print the result of 7 + 5
@@ -41,8 +42,6 @@ public class Basics {
         System.out.println(7 + 5);
 
         System.out.println("Hello World!");
-
-
 
         /* 4. In Python, we could declare variables using a simple assignment
          *    statement. For example:
@@ -55,10 +54,7 @@ public class Basics {
          *
          *    (Relevant reading: 1.2. Variables and Types)
          */
-
         int my_variable = 100;
-
-
 
         /* Do not remove the line below: if you did task 2 correctly, then
          * you should see the message "my_variable's value is 100" if you run
@@ -81,11 +77,9 @@ public class Basics {
          *
          *    (Relevant reading: 1.8.2. for Loops)
          */
-
         for(int i = 10; i >= 0; i--){
             System.out.println("Current count: " + i);
         }
-
 
     }
 
@@ -119,19 +113,11 @@ public class Basics {
      * @return           The first letter of every word in to_split
      */
     public static String split(String to_split) {
-        /* TODO (Task 4): Complete this method body.
-         *                The String methods .split and .charAt may be helpful,
-         *                along with the StringBuilder.append
-         *                You may also assume that to_split always has 7 words
-         *                separated by spaces, so no loops are required, though
-         *                you may use them if you wish.
-         */
         StringBuilder ret = new StringBuilder();
-
-        for(String s : to_split.split(" ")){
-            ret.append(s.charAt(0));
+        String[] words = to_split.split(" ");
+        for(String word : words){
+            ret.append(word.charAt(0));
         }
-
         return ret.toString();
     }
 
@@ -151,13 +137,10 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
-
         for(int i = 1; i < arr.length; i += 2){
             current_sum += arr[i];
         }
-
         return current_sum;
     }
-
 
 }
